@@ -1,0 +1,118 @@
+/**
+    Copyright @gabyfle: 2024
+    (lol, just kidding, my skills in CSS are not that good)
+*/
+
+body {
+    color: #FFFFFF;
+    background-color: #1C0D30;
+
+    font-family: 'JetBrains Mono', serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+header {
+    text-align: center;
+
+    margin: auto;
+    padding: 10px 0;
+}
+
+header h1 {
+    font-weight: normal;
+}
+
+header p {
+    color: #AB7DDE;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: lighter;
+    line-height: 10px;
+}
+
+header a {
+    color: #AB7DDE;
+
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #AB7DDE;
+    text-decoration: underline;
+}
+
+header a:visited {
+    color: #AB7DDE;
+    text-decoration: none;
+}
+
+footer {
+    color: #AB7DDE;
+    text-align: center;
+
+    margin: auto;
+    padding: 10px 0;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: lighter;
+}
+
+/** Projects styling */
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px;
+}
+
+.project {
+    display: flex;
+    flex-wrap: wrap;
+
+    font-size: 14px;
+    line-height: 15px;
+
+    max-width: 500px;
+
+    flex: 1 0 auto;
+    margin: 10px;
+}
+
+.project p {
+    color: #AB7DDE;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: lighter;
+}
+
+.project-image {
+    object-fit: contain;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    border-radius: 10px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+
+    color: #1C0D30;
+    text-decoration: none;
+    text-align: center;
+
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #AB7DDE;
+
+    background-color: #AB7DDE;
+}
+
+/** While hovering the #blog button, something fancy happens */
+.btn:hover {
+    background-color: #1C0D30;
+    color: #AB7DDE;
+}
