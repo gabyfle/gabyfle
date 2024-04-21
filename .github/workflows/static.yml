@@ -1,14 +1,12 @@
 name: Deploy Website to my VPS
-
 on:
   push:
-    branches: [ main ]  # Adjust branch(es) to trigger deployment
-
+    branches: [ main ]
 jobs:
-  deploy:
-    runs-on: ubuntu-latest  # Or a runner OS matching your VPS environment
-
+  build:
+    runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Upload files to VPS
         uses: appleboy/scp-action@master
         with:
