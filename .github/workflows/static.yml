@@ -7,17 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Upload files to VPS
-        uses: appleboy/scp-action@master
+      - name: Deploy to VPS Server
+        uses: easingthemes/ssh-deploy@main
         with:
-          host: ${{ env.VPS_HOST }}
-          username: ${{ env.VPS_USERNAME }}
-          port: 22
-          key: ${{ env.SSH_PRIVATE_KEY }}
-          source: "*.html, *.css, *.svg, *.ico, *.woff, *.woff2"
-          target: ${{ env.PATH }}
-        env:
-          PATH: ${{ secrets.PATH }}
-          VPS_HOST: ${{ secrets.HOST }}
-          VPS_USERNAME: ${{ secrets.USERNAME }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i"
+          SOURCE: "/"
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.PATH }}
+          SCRIPT_BEFORE: |
+            whoami
+            ls -al
+          SCRIPT_AFTER: |
+            whoami
+            ls -al
+            echo $RSYNC_STDOUT
