@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest  # Or a runner OS matching your VPS environment
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: Upload files to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
