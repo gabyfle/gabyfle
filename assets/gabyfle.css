@@ -97,8 +97,7 @@ footer {
 }
 
 .btn {
-    display: block;
-    width: 100%;
+    display: inline-block;
 
     color: #1C0D30;
     text-decoration: none;
@@ -107,6 +106,8 @@ footer {
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #AB7DDE;
+
+    margin-right: 10px;
 
     background-color: #AB7DDE;
 }
