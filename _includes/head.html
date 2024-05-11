@@ -64,13 +64,8 @@
     <link rel="preload" href="/assets/images/lice.min.webp" as="image">
     {% endif %}
 
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var scriptElement = document.querySelector('script[src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"]');
-            scriptElement.addEventListener("load", function () {
-                hljs.highlightAll();
-            });
-        });
-    </script>
+    {% if page.title != "Home" %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    {% endif %}
 </head>
