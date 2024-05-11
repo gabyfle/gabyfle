@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+    <div class="content post-fix">
+        <div class="blog-header">
+            <a href="https://gabyfle.dev">Back Home</a>
+        </div>
+        {% include header.html %}
+
+        <div class="post-content">
+            <h2>{{ page.title }}</h2>
+            {% if page.author %}<p>Written by: <span>{{ page.author }}</span> on <time>{{ page.date | date: "%B
+                    %-d, %Y" }}</time></p>{% endif %}
+            <div>
+                {{ content }}
+            </div>
+        </div>
+
+        {% include footer.html %}
+    </div>
+    {% assign images = content | split:"<img " %}
+    {% assign image_urls = "" | split:" ," %} {% for image in images %} {% assign src_index=image | split:'src="' | size %}
+      {% if src_index > 1 %}
+        {% assign src = image | split:'src="' | last | split:'"' | first %}
+        {% assign image_urls = image_urls | push:src %}
+      {% endif %}
+    {% endfor %}
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "{{ page.title }}",
+    "image": [ "https://gabyfle.dev/assets/images/blog.min.png" ],
+    "datePublished": "{{ page.date | date: "%FT%T%:z" }}",
+    "dateModified": "{{ page.date | date: "%FT%T%:z" }}",
+    "author": [{
+    "@type": "Person",
+    "name": "{{ page.author }}",
+    "url": "https://gabyfle.dev"
+    }]
+    }
+    </script>
+</body>
+
+</html>

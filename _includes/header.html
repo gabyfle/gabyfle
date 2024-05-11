@@ -1,0 +1,25 @@
+<header itemscope itemtype="https://schema.org/Person">
+    <h1><span itemprop="name">Gabriel "@gabyfle" Santamaria</span></h1>
+    <p itemprop="jobTitle">Computer science student <a href="https://www.utc.fr/" target="_blank">@UTC</a>,
+        mathematics student <a href="https://www.univ-angers.fr/" target="_blank">@UA</a> and <a
+            href="https://soundcloud.com/gabyfle" target="_blank">techno producer</a> while
+        not studying</p>
+</header>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site.url }}"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ page.title }}",
+            "item": "{{ site.url }}{{ page.url }}"
+        }]
+    }
+</script>

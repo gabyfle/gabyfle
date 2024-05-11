@@ -10,6 +10,13 @@ body {
     font-family: 'JetBrains Mono', serif;
     font-weight: bold;
     font-style: normal;
+
+    margin: 0;
+}
+
+code {
+    font-family: 'JetBrains Mono', serif;
+    font-size: 14px;
 }
 
 header {
@@ -28,7 +35,23 @@ header p {
 
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: lighter;
-    line-height: 10px;
+    /* line-height: 10px;*/
+}
+
+p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: lighter;
+}
+
+a {
+    color: #AB7DDE;
+
+    text-decoration: none;
+}
+
+a:hover {
+    color: #AB7DDE;
+    text-decoration: underline;
 }
 
 header a {
@@ -51,33 +74,42 @@ footer {
     color: #AB7DDE;
     text-align: center;
 
-    margin: auto;
-    padding: 10px 0;
-
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: lighter;
+}
+
+footer>.social,
+footer>.social-link {
+    flex: 1;
 }
 
 /** Projects styling */
 
 .content {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 50px;
+
+    justify-content: space-evenly;
+    row-gap: 10px;
+
+    /* margin: 0 15px; */
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
 }
 
 .project {
-    display: flex;
-    flex-wrap: wrap;
+    max-width: 720px;
+}
 
-    font-size: 14px;
-    line-height: 15px;
-
-    max-width: 500px;
-
-    flex: 1 0 auto;
-    margin: 10px;
+.project * {
+    flex: 1;
 }
 
 .project p {
@@ -89,9 +121,10 @@ footer {
 
 .project-image {
     object-fit: contain;
-
+    aspect-ratio: auto 720 / 300;
     max-width: 100%;
-    max-height: 100%;
+
+    margin: auto;
 
     border-radius: 10px;
 }
@@ -116,4 +149,120 @@ footer {
 .btn:hover {
     background-color: #1C0D30;
     color: #AB7DDE;
+}
+
+/** Blog styling */
+
+div.code {
+    white-space: normal;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    margin: auto;
+}
+
+.post-content {
+    text-align: justify;
+
+    margin: auto;
+
+    max-width: 800px;
+}
+
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    text-align: left;
+}
+
+.post-content ul {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: lighter;
+}
+
+.blog h2 {
+    text-align: center;
+}
+
+.blog-header {
+    background-color: #0c0514;
+    color: #FFFFFF;
+
+    text-align: center;
+
+    padding: 15px;
+}
+
+.post {
+    display: block;
+}
+
+.post .title,
+.post .date {
+    display: inline-block;
+
+    margin-bottom: 0px;
+}
+
+.post .date {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: lighter;
+
+    font-size: 12px;
+}
+
+/** Images styling */
+
+.image {
+    max-width: 350px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the image */
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Style for the caption */
+.image figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.breadcrumb {
+    margin: auto;
+}
+
+@media only screen and (max-width: 767px) {
+    .content {
+        margin: 15px;
+    }
+    .post-fix {
+        display: block;
+        margin: 0;
+    }
 }
